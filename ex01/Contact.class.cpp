@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:58:41 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 16:18:04 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:23:11 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ Contact::~Contact( void ) {
 	return ;
 }
 
-void Contact::_set_data(std::string s_fname, std::string s_fname, std::string s_nname,
+void Contact::_set_data(std::string s_fname, std::string s_lname, std::string s_nname,
 		std::string s_phone, std::string s_dark) {
 	this->_First_name = s_fname;
-	this->_Last_name = s_fname;
+	this->_Last_name = s_lname;
 	this->_Nick_name = s_nname;
 	this->_Phone_number = s_phone;
 	this->_Darkest_secret = s_dark;
