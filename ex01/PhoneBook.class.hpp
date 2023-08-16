@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:21:29 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 15:43:57 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:05:36 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class   PhoneBook   {
                     void            _add_contact_to_line(int index);
                     int             _get_number_of_contact(void) const;
             public:
-                    PhoneBook(void);
-                    ~PhoneBook(void);
+                    PhoneBook( void );
+                    ~PhoneBook( void );
                     void    add_contact(void);
                     void    search_contact(void);
 };

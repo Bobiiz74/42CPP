@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:58:41 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 15:30:13 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:18:04 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ Contact::~Contact( void ) {
 	return ;
 }
 
-void Contact::_set_data(std::string s_name, std::string s_fname, std::string s_nick,
+void Contact::_set_data(std::string s_fname, std::string s_fname, std::string s_nname,
 		std::string s_phone, std::string s_dark) {
-	this->_First_name = s_name;
+	this->_First_name = s_fname;
 	this->_Last_name = s_fname;
-	this->_Nick_name = s_nick;
+	this->_Nick_name = s_nname;
 	this->_Phone_number = s_phone;
 	this->_Darkest_secret = s_dark;
 	return ;
@@ -54,15 +54,15 @@ void Contact::ask_param(void){
 
 	std::string s_prenom("");
 	get_input(s_prenom, "first name");
-	std::string s_nom("");
-	get_input(s_nom, "last name");
-	std::string s_nick("");
-	get_input(s_nick, "nickname");
+	std::string s_lname("");
+	get_input(s_lname, "last name");
+	std::string s_nname("");
+	get_input(s_nname, "nickname");
 	std::string s_phone("");
 	get_input(s_phone, "phone number");
 	std::string s_dark("");
 	get_input(s_dark, "darkest secret");
-	this->_set_data(s_prenom, s_nom, s_nick, s_phone, s_dark);
+	this->_set_data(s_prenom, s_lname, s_nname, s_phone, s_dark);
 	return ;
 }
 
@@ -82,14 +82,14 @@ void Contact::print_contact(void) const {
 	return ;
 }
 
-static void print_name_under_10(std::string s_name) {
-	if (s_name.length() > 10)
+static void print_name_under_10(std::string s_fname) {
+	if (s_fname.length() > 10)
 	{
-		std::cout << s_name.substr(0, 9);
+		std::cout << s_fname.substr(0, 9);
 		std::cout << ".|";
 		return ;
 	}
-	std::cout << std::right << std::setw(10) << s_name;
+	std::cout << std::right << std::setw(10) << s_fname;
 	std::cout << "|";
 	return ;
 }

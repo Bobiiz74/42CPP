@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:19:52 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 15:39:51 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:13:10 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main()
     {
         std::cout <<"PhoneBook : ";
         std::getline(std::cin, cmd_input);
+        if (std::cin.eof())
+			break ;
         if (!cmd_input.compare("ADD"))
             phonebook.add_contact();
         if(!cmd_input.compare("SEARCH"))
