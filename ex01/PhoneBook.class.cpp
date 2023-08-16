@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 16:00:17 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 15:51:07 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:34:36 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook(void) {
 }
 
 void	PhoneBook::_add_contact_to_line(int index){
-	this->_book[index].ask_param();
+	this->_book[index].get_param();
 	if (this->_numb_of_contact < 8)
 		this->_numb_of_contact++;
 	return ;

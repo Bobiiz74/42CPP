@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:30:14 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 16:18:02 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:34:29 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Contact   {
                 void _set_data(std::string s_fname, std::string s_lname,
                         std::string s_nname, std::string s_phone, std::string s_dark);
         public:
-                Contact( void );
-                ~Contact( void );
+                Contact(void);
+                ~Contact(void);
                 void copy(const Contact old_contact);
-                void ask_param(void);
+                void get_param(void);
                 void print_contact (void) const;
                 void print_line_contact (int index) const;
     };

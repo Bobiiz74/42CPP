@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:58:41 by robin             #+#    #+#             */
-/*   Updated: 2023/08/16 16:23:11 by robin            ###   ########.fr       */
+/*   Updated: 2023/08/16 16:34:32 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void get_input(std::string &s_input, std::string s_param) {
 	return ;
 }
 
-void Contact::ask_param(void){
+void Contact::get_param(void){
 
 	std::string s_prenom("");
 	get_input(s_prenom, "first name");
