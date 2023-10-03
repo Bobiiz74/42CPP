@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:34:27 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 15:28:31 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:11:57 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ std::cout << "-----------------------------------------" << std::endl;
 	std::cout << "0: "; d.attack("BobScav");
 	std::cout << "1: "; d.guardGate();
 	std::cout << "2: "; d.beRepaired(1); //ne peut pas etre réparé
-	std::cout << "3: "; d.takeDamage(6); // peut prendre des dgts
+	std::cout << "3: "; d.takeDamage(5); // peut prendre des dgts
 	std::cout << "4: "; d.beRepaired(100); // peut etre réparé
 	std::cout << "5: "; d.takeDamage(100); // bill meurt
 	std::cout << "6: "; d.takeDamage(100); // bill deja (mort)

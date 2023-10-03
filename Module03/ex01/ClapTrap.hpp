@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:36:00 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 14:11:37 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:39:08 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap  {
                 unsigned int             _hitPoint;
                 unsigned int             _energyPoint;
                 unsigned int             _attackDmg;
+                unsigned int             _maxHp;
         private :
         
         public :

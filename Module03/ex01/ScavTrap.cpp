@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:12:11 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 15:34:55 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:40:45 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ ScavTrap::ScavTrap(void)    {
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)  {
     std::cout << "ScavTrap constructor called" << std::endl;
-    this->_hitPoint = 100;
-    this->_energyPoint = 50;
-    this->_attackDmg = 20;
+    _hitPoint = 100;
+    _energyPoint = 50;
+    _attackDmg = 20;
+    _maxHp = 100;
     return;
 }
 
@@ -41,6 +42,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap const & rhs) {
     this->_hitPoint = rhs._hitPoint;
     this->_energyPoint = rhs._energyPoint;
     this->_attackDmg = rhs._attackDmg;
+    this->_maxHp = rhs._maxHp;
     return (*this);
 }
 
@@ -57,7 +59,7 @@ void ScavTrap::attack(const std::string& target)    {
         std::cout << this->_name << " can't attack" << std::endl;
 }
 
-void ScavTrap::beRepaired(unsigned int amount)  {
+/*void ScavTrap::beRepaired(unsigned int amount)  {
     if(this->_hitPoint > 0 && this->_energyPoint > 0 && get_HP() < 100)
     {
         if(amount > (unsigned int)(100 - get_HP()))
@@ -76,7 +78,7 @@ void ScavTrap::beRepaired(unsigned int amount)  {
     else
         std::cout << this->_name << " can't be repared" << std::endl; 
 }
-
+*/
 void ScavTrap::guardGate()  {
     if(this->_hitPoint <= 0)
         std::cout << _name << " cannot enter in Guard Gate mode because he is dead" << std::endl;

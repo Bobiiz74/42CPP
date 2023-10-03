@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:47:55 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 15:09:23 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:26:13 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ScavTrap : public ClapTrap {
             ~ScavTrap(void);
             ScavTrap& operator=(ScavTrap const & rhs);
             void attack(const std::string& target);
-            void beRepaired(unsigned int amount);
+            //void beRepaired(unsigned int amount);
             void guardGate();
     
 };

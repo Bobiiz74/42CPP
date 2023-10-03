@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:39:54 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 15:12:59 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:45:06 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(void)  {
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10),
-_attackDmg(0) {
+_attackDmg(0), _maxHp(10) {
 	std::cout << "Creation of ClapTrap: " << this->_name << std::endl;
 	return ; 
 }
@@ -40,6 +40,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap& rhs) {
     this->_hitPoint = rhs._hitPoint;
     this->_energyPoint = rhs._energyPoint;
     this->_attackDmg = rhs._attackDmg;
+    this->_maxHp = rhs._maxHp;
     return (*this);
 }
 
@@ -73,13 +74,13 @@ void ClapTrap::takeDamage(unsigned int amount)  {
 	return ;
 }
 void ClapTrap::beRepaired(unsigned int amount)  {
-   if(this->_hitPoint > 0 && this->_energyPoint > 0 && this->_hitPoint < 10)
+   if(this->_hitPoint > 0 && this->_energyPoint > 0 && this->_hitPoint < _maxHp)
     {
-        if(amount > (10 - this->_hitPoint))
+        if(amount > (_maxHp - this->_hitPoint))
         {
             std::cout << "Claptrap " << this->_name;
-		    std::cout << " repairs " << (10 - _hitPoint) << " hp." << std::endl;
-            this->_hitPoint += (10 - _hitPoint);
+		    std::cout << " repairs " << (_maxHp - _hitPoint) << " hp." << std::endl;
+            this->_hitPoint += (_maxHp - _hitPoint);
         }
         else
         {
