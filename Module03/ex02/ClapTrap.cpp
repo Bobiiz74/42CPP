@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:39:54 by robin             #+#    #+#             */
-/*   Updated: 2023/10/03 17:16:41 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 17:42:37 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void ClapTrap::beRepaired(unsigned int amount)  {
     {
         if(amount > (_maxHp - this->_hitPoint))
         {
-            std::cout << "Claptrap " << this->_name;
+            std::cout << this->_name;
 		    std::cout << " repairs " << (_maxHp - _hitPoint) << " hp." << std::endl;
             this->_hitPoint += (_maxHp - _hitPoint);
         }

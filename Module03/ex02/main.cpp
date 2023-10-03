@@ -6,12 +6,13 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:34:27 by robin             #+#    #+#             */
-/*   Updated: 2023/10/03 17:16:47 by robin            ###   ########.fr       */
+/*   Updated: 2023/10/03 18:02:43 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(){
     ClapTrap	a("Bill");
@@ -35,7 +36,7 @@ int main(){
 	}
 	b.beRepaired(42);
 	
-std::cout << "-----------------------------------------" << std::endl;
+	std::cout << "-----------------------------------------" << std::endl;
 
 	ScavTrap	d("BillScav");
 	ScavTrap	e(d);
@@ -60,6 +61,29 @@ std::cout << "-----------------------------------------" << std::endl;
 	e.beRepaired(42);
 	e.guardGate();
 
+	std::cout << "-----------------------------------------" << std::endl;	
+
+	FragTrap	g("BillFrag");
+	FragTrap	h(g);
+	FragTrap	i("BobFrag");
+	h = i;
+	std::cout << "1: "; g.attack("Bobfrag");
+	std::cout << "2: "; g.highFivesGuys();
+	std::cout << "3: "; g.beRepaired(1); //si on peut pas etre reparer
+	std::cout << "4: "; g.takeDamage(6); // si on peut prendre des degats
+	std::cout << "5: "; g.beRepaired(100); // si on peut etre reparer
+	std::cout << "6: "; g.takeDamage(20); // 
+	std::cout << "7: "; g.takeDamage(100); // si on ne peut pas prendre 100 degat mais 80
+	std::cout << "8: "; g.beRepaired(3); // si on ne peut plus etre repare (deja mort)
+	std::cout << "9: "; g.attack("truc"); // si on ne peut plus attacker (deja mort)
+	std::cout << "10: "; g.highFivesGuys(); // si on ne peut plus high five (deja mort)
+	std::cout << "---- Energy check ----" << std::endl;
+	for (int i = 0; i < 11; i++)
+	{
+		std::cout << i + 1 << ": "; h.attack("someone");
+	}
+	h.beRepaired(42);
+	h.highFivesGuys();
 	std::cout << std::endl << std::endl << "---- Destruction ----" << std::endl;
 	return 0;
 }
