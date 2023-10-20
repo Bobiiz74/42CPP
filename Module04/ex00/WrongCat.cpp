@@ -12,7 +12,7 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void)    {
+WrongCat::WrongCat(void)  : WrongAnimal("WrongCat")  {
     std::cout << "Construtor WrongCat called." << std::endl;
     return;
 } 
@@ -36,4 +36,8 @@ WrongCat::~WrongCat(void)   {
 
 void    WrongCat::makeSound(void) const {
     std::cout << "Meow Meow" << std::endl;
+}
+
+std::string WrongCat::getType() const {
+    return(this->_type);
 }

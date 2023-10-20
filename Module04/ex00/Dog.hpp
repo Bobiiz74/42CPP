@@ -16,7 +16,7 @@
 #include <iostream>
 #include "Animal.hpp"
 
-class Dog: virtual public Animal
+class Dog: public Animal
 {
     private:
     
@@ -26,6 +26,7 @@ class Dog: virtual public Animal
             virtual ~Dog();
             Dog &operator=(const Dog& rhs);
             virtual void    makeSound(void) const;
+            std::string getType() const;
 
 };
 
