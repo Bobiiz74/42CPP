@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void)    {
+Cat::Cat(void)  : Animal("Cat") {
     std::cout << "Construtor Cat called." << std::endl;
     return;
 } 
@@ -36,4 +36,8 @@ Cat::~Cat(void)   {
 
 void    Cat::makeSound(void) const {
     std::cout << "Meow Meow" << std::endl;
+}
+
+std::string Cat::getType() const {
+    return(this->_type);
 }

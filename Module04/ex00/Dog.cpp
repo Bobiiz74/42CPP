@@ -12,7 +12,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)    {
+Dog::Dog(void)  : Animal("Dog")    {
     std::cout << "Construtor Dog called." << std::endl;
     return;
 } 
@@ -36,4 +36,8 @@ Dog::~Dog(void)   {
 
 void    Dog::makeSound(void) const {
     std::cout << "Bark Bark" << std::endl;
+}
+
+std::string Dog::getType() const {
+    return(this->_type);
 }
