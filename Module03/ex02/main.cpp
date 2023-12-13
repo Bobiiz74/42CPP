@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:34:27 by robin             #+#    #+#             */
-/*   Updated: 2023/10/03 18:02:43 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/13 14:34:16 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int main(){
 	std::cout << "9: "; g.attack("truc"); // si on ne peut plus attacker (deja mort)
 	std::cout << "10: "; g.highFivesGuys(); // si on ne peut plus high five (deja mort)
 	std::cout << "---- Energy check ----" << std::endl;
-	for (int i = 0; i < 11; i++)
+	for (int i = 0; i < 101; i++)
 	{
 		std::cout << i + 1 << ": "; h.attack("someone");
 	}

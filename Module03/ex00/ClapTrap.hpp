@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 14:36:00 by robin             #+#    #+#             */
-/*   Updated: 2023/09/18 14:10:34 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/13 14:16:17 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class ClapTrap  {
                 void takeDamage(unsigned int amount);
                 void beRepaired(unsigned int amount);
                 std::string	get_name(void) const;
-		        int get_HP(void) const;
-		        int get_energy(void) const;
+		int get_HP(void) const;
+		int get_energy(void) const;
 
 
     
