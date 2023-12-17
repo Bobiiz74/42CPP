@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:19:23 by robin             #+#    #+#             */
-/*   Updated: 2023/10/11 17:27:27 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/17 15:20:26 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 WrongAnimal::WrongAnimal(void)    {
     std::cout << "Construtor WrongAnimal called." << std::endl;
+    _type = "WrongAnimal";
     return;
 } 
 
-WrongAnimal::WrongAnimal(std::string type) :  _type(type) {
-    std::cout << "Creation of WrongAnimal." << std::endl;
-    return;
-}
-
 WrongAnimal::WrongAnimal(const WrongAnimal& src)   {
     std::cout << "Copy WrongAnimal constructor called." << std::endl;
-    *this = src;
+    _type = src._type;
     return;
 }
 

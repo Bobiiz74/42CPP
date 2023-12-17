@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:49:40 by robin             #+#    #+#             */
-/*   Updated: 2023/10/11 17:12:28 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/17 15:28:40 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat: public Animal
     public:
             Cat(void);
             Cat(const Cat& src);
-            virtual ~Cat();
+            ~Cat();
             Cat &operator=(const Cat& rhs);
             virtual void    makeSound(void) const;
             std::string getType() const;

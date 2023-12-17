@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:19:23 by robin             #+#    #+#             */
-/*   Updated: 2023/10/11 16:47:56 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/17 15:22:12 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ Animal::Animal(const Animal& src)   {
 
 Animal & Animal::operator=(const Animal& rhs)    {
     std::cout << "Assignement Animal constructor called" << std::endl;
-    this->_type = rhs._type;
-    return (*this);
+    if (this != &rhs) {
+		this->_type = rhs._type;
+	}
+	return (*this);
 }
 
 Animal::~Animal(void)   {

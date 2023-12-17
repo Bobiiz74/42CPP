@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:15:24 by robin             #+#    #+#             */
-/*   Updated: 2023/10/11 17:39:15 by robin            ###   ########.fr       */
+/*   Updated: 2023/12/17 15:20:38 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class WrongAnimal
     
     public:
             WrongAnimal(void);
-            WrongAnimal(std::string type);
             WrongAnimal(const WrongAnimal& src);
             virtual ~WrongAnimal();
             WrongAnimal &operator=(const WrongAnimal& rhs);
