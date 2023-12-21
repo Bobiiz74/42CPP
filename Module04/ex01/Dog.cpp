@@ -11,13 +11,15 @@
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog(void)  : Animal("Dog")    {
     std::cout << "Construtor Dog called." << std::endl;
+    brain = new Brain();
     return;
 } 
 
-Dog::Dog(const Dog& src)   {
+Dog::Dog(const Dog& src)    : Animal(src)  {
     std::cout << "Copy Dog constructor called." << std::endl;
     *this = src;
     return;
@@ -25,12 +27,17 @@ Dog::Dog(const Dog& src)   {
 
 Dog & Dog::operator=(const Dog& rhs)    {
     std::cout << "Assignement Dog constructor called" << std::endl;
-    this->_type = rhs._type;
+    if (this != &rhs)
+    {
+        this-> _type = rhs._type;
+        this->brain = new Brain(*rhs.brain);
+    }
     return (*this);
 }
 
 Dog::~Dog(void)   {
     std::cout << "Destructor Dog called." << std::endl;
+    delete brain;
     return;
 }
 

@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat(void)  : Animal("Cat") {
     std::cout << "Construtor Cat called." << std::endl;
+    brain = new Brain();
     return;
 } 
 
@@ -25,12 +27,17 @@ Cat::Cat(const Cat& src)   {
 
 Cat & Cat::operator=(const Cat& rhs)    {
     std::cout << "Assignement Cat constructor called" << std::endl;
-    this->_type = rhs._type;
+    if (this != &rhs)
+    {
+        this-> _type = rhs._type;
+        this->brain = new Brain(*rhs.brain);
+    }
     return (*this);
 }
 
 Cat::~Cat(void)   {
     std::cout << "Destructor Cat called." << std::endl;
+    delete brain;
     return;
 }
 
