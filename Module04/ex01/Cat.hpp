@@ -18,7 +18,8 @@
 
 class Cat: public Animal
 {
-    private:
+    private:    
+            Brain*  brain;
     
     public:
             Cat(void);

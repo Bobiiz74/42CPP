@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 
+Brain::Brain(void)  {
+    std::cout << "Construtor Brain called." << std::endl;
+    return;
+} 
+
+Brain::Brain(const Brain& src)   {
+    std::cout << "Copy Brain constructor called." << std::endl;
+    *this = src;
+    return;
+}
+
+Brain & Brain::operator=(const Brain& rhs)    {
+    std::cout << "Assignement Brain constructor called" << std::endl;
+    return (*this);
+}
+
+Brain::~Brain(void)   {
+    std::cout << "Destructor Brain called." << std::endl;
+    return;
+}
