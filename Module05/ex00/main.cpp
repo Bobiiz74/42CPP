@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:05:16 by robin             #+#    #+#             */
-/*   Updated: 2024/01/19 10:53:33 by robin            ###   ########.fr       */
+/*   Updated: 2024/01/19 11:24:59 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,34 @@ int main(){
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "---------------------" << std::endl;
-	Bureaucrat b("Bureaucrat", 1);
 	try {
+	    Bureaucrat b("Bureaucrat", 1);
 		b.promote();
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "---------------------" << std::endl;
-	Bureaucrat b2("Bureaucrat", 150);
 	try {
-		b2.demote();
+	    Bureaucrat c("Bureaucrat", 150);
+		c.demote();
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "---------------------" << std::endl;
-	Bureaucrat ("bob", 1);
-	std::cout << c << std::endl;
-	c.demote();
-	std::cout << c << std::endl;
-	for(int i = 0; i < 5; i++)
-	{
-			c.demote();
-			std::cout << c << std::endl;
+	try {
+	    Bureaucrat d("Bureaucrat", 50);
+        std::cout << d << std::endl;
+		d.demote();
+        std::cout << d << std::endl;
+        d.promote();
+        std::cout << d << std::endl;
 	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "---------------------" << std::endl;
+
 	return (0);
 }
