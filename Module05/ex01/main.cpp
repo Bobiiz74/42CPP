@@ -6,11 +6,12 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:05:16 by robin             #+#    #+#             */
-/*   Updated: 2024/01/19 11:57:34 by robin            ###   ########.fr       */
+/*   Updated: 2024/01/19 12:36:14 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(){
     std::cout << "---------------------" << std::endl;
