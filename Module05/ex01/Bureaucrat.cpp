@@ -6,11 +6,12 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:05:53 by robin             #+#    #+#             */
-/*   Updated: 2024/01/19 10:45:12 by robin            ###   ########.fr       */
+/*   Updated: 2024/01/19 15:48:15 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat (void){
     std::cout << "Constructor Bureaucrat called" << std::endl;
@@ -20,6 +21,10 @@ Bureaucrat::Bureaucrat (void){
 Bureaucrat::~Bureaucrat (){
     std::cout << "Destructor Bureaucrat called" << std::endl;
     return; 
+}
+
+Bureaucrat::Bureaucrat (const Bureaucrat& src) {
+    *this = src;
 }
 
 Bureaucrat::Bureaucrat (const std::string name, int grade)   : _name(name){
@@ -34,7 +39,6 @@ Bureaucrat::Bureaucrat (const std::string name, int grade)   : _name(name){
 }
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat& rhs){
     (void)rhs;
-	std::cout << "Can't copy a Bureaucrat per assignement" << std::endl;
 	return *this;
 }
 
@@ -56,6 +60,18 @@ std::string Bureaucrat::getName(void) const {
 
 int Bureaucrat::getGrade(void) const{
     return(this->_grade);
+}
+
+void    Bureaucrat::signForm(Form & b) const {
+    try {
+        b.beSigned(*this);
+    }
+    catch (std::exception &e){
+        std::cout << this->_name << " couldn't sign " << b.getName() << " because he is not grade " << b.getGradeToSign() << std::endl;
+        std::cout << e.what() << std::endl;
+        return;
+    }
+    std::cout << this->_name << " signed " << b.getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &ostr, const Bureaucrat &b)
