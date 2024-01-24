@@ -6,13 +6,13 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:12:11 by robin             #+#    #+#             */
-/*   Updated: 2024/01/19 15:25:11 by robin            ###   ########.fr       */
+/*   Updated: 2024/01/19 16:27:02 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form (void) : _name("nikemouk"), _gradeToSign(1), _gradeToExecute(1){
+Form::Form (void) : _name("default"), _gradeToSign(1), _gradeToExecute(1){
     std::cout << "Constructor Form called" << std::endl;
     return;
 }
