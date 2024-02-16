@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:41:26 by robin             #+#    #+#             */
-/*   Updated: 2024/02/14 16:58:28 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/16 17:35:26 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,18 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &rhs)
 }
 
 void    ScalarConverter::convert(std::string str){
-    if(ScalarConverter::isChar(str))
+    if (str.empty())
+		ScalarConverter::print(str[0]);
+    else if(ScalarConverter::isChar(str))
         ScalarConverter::print(str[0]);
     else if(ScalarConverter::isInt(str))
         ScalarConverter::print(std::atoi(str.c_str()));
     else if(ScalarConverter::isFloat(str))
-        ScalarConverter::print(std::atof(str.c_str()));
+        ScalarConverter::printFloat(std::atof(str.c_str()));
+    else if(ScalarConverter::isDouble(str))
+        ScalarConverter::printDouble(std::strtod(str.c_str(), NULL));
+    else 
+        std::cout << "Invalid arguments" << std::endl;
 }
 
 bool	ScalarConverter::isChar(std::string input){
@@ -85,8 +91,27 @@ bool	ScalarConverter::isFloat(std::string input){
 		return false;
 	return true;
 }
-/*static bool	ScalarConverter::isDouble(std::string input)
-static bool ScalarConverter::isMinMax(std::string input)*/
+
+bool	ScalarConverter::isDouble(std::string input){
+    size_t	i = 0;
+
+	while (std::isspace(input[i]))
+		i++;
+	if (input[i] == '+' || input[i] == '-')
+		i++;
+	while (std::isdigit(input[i]))
+		i++;
+	if (input[i] != '.' || input[i + 1] == '\0')
+		return (false);
+	i++;
+	while (std::isdigit(input[i]))
+		i++;
+	if (input[i] != '\0')
+		return false;
+	return true;
+    
+}
+/*static bool ScalarConverter::isMinMax(std::string input)*/
 
 void	ScalarConverter::print(char c){
     if (std::isprint(c))
@@ -109,15 +134,26 @@ void	ScalarConverter::print(int i){
 	std::cout << "double	: " << static_cast<double>(i) << ".0" << std::endl;
 }
 
-void	ScalarConverter::print(float f){
+void	ScalarConverter::printFloat(float f){
     char	c = static_cast<char>(f);
 	if (std::isprint(c))
 		std::cout << "char	: '" << c << "'" << std::endl;
 	else
 		std::cout << "char	: Non displayable" << std::endl;
 	std::cout << "int	: " << static_cast<int>(f) << std::endl;
-	std::cout << "float	: " << f << std::endl;
+	std::cout << "float	: " << static_cast<float>(f) << std::endl;
 	std::cout << "double	: " << static_cast<double>(f) << std::endl;
+    std::cout << "float" << std::endl;
 }
-/*void	ScalarConverter::print(double d)
-void ScalarConverter::print(?)*/
+void	ScalarConverter::printDouble(double d){
+    char	c = static_cast<char>(d);
+	if (std::isprint(c))
+		std::cout << "char	: '" << c << "'" << std::endl;
+	else
+		std::cout << "char	: Non displayable" << std::endl;
+	std::cout << "int	: " << static_cast<int>(d) << std::endl;
+	std::cout << "float	: " << static_cast<float>(d) << "f" << std::endl;
+	std::cout << "double	: " << d << std::endl;
+    std::cout << "double" << std::endl;
+}
+/*void ScalarConverter::print(?)*/

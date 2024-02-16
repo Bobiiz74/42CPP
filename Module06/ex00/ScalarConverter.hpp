@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:41:51 by robin             #+#    #+#             */
-/*   Updated: 2024/02/14 16:45:50 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/16 17:33:13 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ class ScalarConverter {
 
             static void	print(char c);
 		    static void	print(int i);
-		    static void	print(float f);
-		   // static void	print(double d);
+		    static void	printFloat(float f);
+		    static void	printDouble(double d);
             //static void print(?);
 
 };
