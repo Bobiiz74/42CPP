@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:41:51 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 12:27:53 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 14:19:19 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,5 @@ class ScalarConverter {
             static void printNan(std::string str);
 
 };
-
-std::ostream &operator<<(std::ostream &ostr, const ScalarConverter& rhs);
 
 #endif
