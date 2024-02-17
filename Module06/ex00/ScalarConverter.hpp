@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:41:51 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 11:39:35 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 12:27:53 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ class ScalarConverter {
 		    static bool	isInt(std::string input);
 		    static bool	isFloat(std::string input);
 		    static bool	isDouble(std::string input);
-            static bool isMinMax(std::string input);
+            static bool isNan(std::string input);
 
             static void	print(char c);
 		    static void	print(int i);
 		    static void	printFloat(float f);
 		    static void	printDouble(double d);
-            //static void print(?);
+            static void printNan(std::string str);
 
 };
 

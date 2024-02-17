@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:41:26 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 12:05:22 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 12:35:53 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &rhs)
 }
 
 void    ScalarConverter::convert(std::string str){
-    if (str.empty())
-		ScalarConverter::print(str[0]);
+    // if (str.empty())
+	// 	ScalarConverter::print(str[0]);
+    if(ScalarConverter::isNan(str))
+        ScalarConverter::printNan(str);
     else if(ScalarConverter::isChar(str))
         ScalarConverter::print(str[0]);
     else if(ScalarConverter::isInt(str))
@@ -111,7 +113,12 @@ bool	ScalarConverter::isDouble(std::string input){
 	return true;
     
 }
-/*static bool ScalarConverter::isMinMax(std::string input)*/
+bool ScalarConverter::isNan(std::string input)
+{
+    if(input == "nan" || input == "nanf" || input == "-inff" || input == "-inf" || input == "+inff" || input == "+inf")
+        return true;
+    return false;
+}
 
 void	ScalarConverter::print(char c){
     if (std::isprint(c))
@@ -156,4 +163,23 @@ void	ScalarConverter::printDouble(double d){
 	std::cout << "float	: " << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double	: " << d << std::endl;
 }
-/*void ScalarConverter::print(?)*/
+void ScalarConverter::printNan(std::string str)
+{
+    std::cout << "char      : impossible" << std::endl;
+    std::cout << "int       : impossible" << std::endl;
+    if(str == "nan" || str == "nanf")
+    {
+        std::cout << "float     : nanf" << std::endl;
+        std::cout << "double    : nan" << std::endl;
+    }
+    else if(str == "-inf" || str == "+inf")
+    {
+        std::cout << "float     : " << str << "f" << std::endl;
+        std::cout << "double    : " << str << std::endl;
+    }
+    else if(str == "-inff" || str == "+inff")
+    {
+        std::cout << "float     : " << str << std::endl;
+        std::cout << "double    : " << str.substr(0, str.length() - 1) << std::endl;
+    }
+}
