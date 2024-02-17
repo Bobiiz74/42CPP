@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:41:26 by robin             #+#    #+#             */
-/*   Updated: 2024/02/16 17:35:26 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 12:05:22 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,10 +140,11 @@ void	ScalarConverter::printFloat(float f){
 		std::cout << "char	: '" << c << "'" << std::endl;
 	else
 		std::cout << "char	: Non displayable" << std::endl;
+    float fl = static_cast<float>(f);
 	std::cout << "int	: " << static_cast<int>(f) << std::endl;
-	std::cout << "float	: " << static_cast<float>(f) << std::endl;
-	std::cout << "double	: " << static_cast<double>(f) << std::endl;
-    std::cout << "float" << std::endl;
+	std::cout << "float	: " << std::setprecision(1) << std::fixed << fl << "f" << std::endl;
+    //std::cout << std::setprecision(-1);
+	std::cout << "double	: "  << static_cast<double>(f) << std::endl;
 }
 void	ScalarConverter::printDouble(double d){
     char	c = static_cast<char>(d);
@@ -154,6 +155,5 @@ void	ScalarConverter::printDouble(double d){
 	std::cout << "int	: " << static_cast<int>(d) << std::endl;
 	std::cout << "float	: " << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double	: " << d << std::endl;
-    std::cout << "double" << std::endl;
 }
 /*void ScalarConverter::print(?)*/

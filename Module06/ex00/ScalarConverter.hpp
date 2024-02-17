@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:41:51 by robin             #+#    #+#             */
-/*   Updated: 2024/02/16 17:33:13 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 11:39:35 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <sstream>
+#include <cfloat>
+#include <iomanip>
 
 class ScalarConverter {
     
