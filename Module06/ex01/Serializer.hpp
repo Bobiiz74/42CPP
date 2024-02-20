@@ -19,19 +19,22 @@
 #include <cfloat>
 #include <iomanip>
 
+struct Data {
+	uintptr_t value;
+};
+
 class Serializer {
     
     private:
-            Serializer(void);
+                Serializer(void);
+                Serializer(const Serializer& src);
+                ~Serializer();
+                Serializer &operator=(const Serializer& rhs);
 
     public:
-            Serializer(const Serializer& src);
-            ~Serializer();
-            Serializer &operator=(const Serializer& rhs);
-
+                static uintptr_t serialize(Data* ptr);
+                static Data* deserialize(uintptr_t raw);
 
 };
-
-std::ostream &operator<<(std::ostream &ostr, const Serializer& rhs);
 
 #endif

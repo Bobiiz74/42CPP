@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 15:12:19 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 14:53:34 by robin            ###   ########.fr       */
+/*   Created: 2024/01/27 16:41:51 by robin             #+#    #+#             */
+/*   Updated: 2024/02/17 12:27:53 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef Base_HPP
+# define Base_HPP
 
-int main(int argc, char **argv)
-{
-    if(argc == 2)
-        ScalarConverter::convert(argv[1]);
-    return(0);
-}
+#include <iostream>
+#include <string>
+#include <ctime>
+
+class Base {
+    public:
+            virtual ~Base() {};
+};
+
+class   A : public Base{
+};
+
+class   B : public Base{
+};
+
+class   C : public Base{
+};
+
+#endif

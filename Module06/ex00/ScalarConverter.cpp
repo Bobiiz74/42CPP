@@ -6,15 +6,15 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:41:26 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 12:35:53 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/17 14:54:22 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter(void) {};
+ScalarConverter::ScalarConverter(void) {}
 
-ScalarConverter::~ScalarConverter(void) {};
+ScalarConverter::~ScalarConverter(void) {}
 
 ScalarConverter::ScalarConverter(const ScalarConverter& src)
 {
