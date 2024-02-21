@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:18:25 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/21 14:17:02 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/21 16:33:57 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 #include <iostream>
 #include <string>
 
 template < typename T >
-void iter(T* array, int length, void f(T&)) {
-    for (int i = 0; i < length; i++) {
-        f(array[i]);
-    }
-}
+class Array {
+private:
+        T * _array;
+        unsigned int _sizeArray;
+        
+public:
+        Array(void);
+        Array(unsigned int n);
+        ~Array(void);
+        Array(Array const & src);
+        Array& operator=(const Array &rhs);
+        unsigned int size(void) const;
+        
+        T& operator[](const unsigned int i);
+};
+
+#include "Array.tpp"
 
 #endif
