@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 11:41:26 by robin             #+#    #+#             */
-/*   Updated: 2024/02/22 12:00:35 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/22 15:10:57 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ void	ScalarConverter::printDouble(double d){
 		std::cout << "char	: '" << c << "'" << std::endl;
 	else
 		std::cout << "char	: Non displayable" << std::endl;
-	std::cout << "int	: " << static_cast<int>(d) << std::endl;
+	std::cout << "int	: " << std::setprecision(1) << std::fixed << static_cast<int>(d) << std::endl;
 	std::cout << "float	: " << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double	: " << d << std::endl;
 }
