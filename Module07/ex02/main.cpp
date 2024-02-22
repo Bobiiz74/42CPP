@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:18:47 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/22 10:55:32 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:23:19 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(void) 
 {
-	{
+	/*{
 		int *a = new int();
 		std::cout << *a << std::endl;
 		delete a;
-	}
+	}*/
 	Array<int> a;
 	std::cout << "-------------\n";
 	std::cout << a.size() << std::endl;
