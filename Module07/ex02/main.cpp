@@ -6,60 +6,34 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:18:47 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/21 16:47:23 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/22 10:55:32 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+int main(void) 
 {
-    //std::cout << "Genie de la lampe" << std::endl;
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+	{
+		int *a = new int();
+		std::cout << *a << std::endl;
+		delete a;
+	}
+	Array<int> a;
+	std::cout << "-------------\n";
+	std::cout << a.size() << std::endl;
+	std::cout << "-------------\n";
+	Array<int> b(5);
+	for (int i = 0; i < 5; i++) {
+		b[i] = i; 
+		std::cout << b[i] << std::endl;
+	}
+	std::cout << "-------\n size: ";
+	std::cout << static_cast<int>(b.size());
+	std::cout << "\n-------\n";
+	try {
+		b[7] = 6;
+	} catch (const std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:05:16 by robin             #+#    #+#             */
-/*   Updated: 2024/01/24 17:16:20 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/22 11:51:51 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(){
 		rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
 		boss.signForm(*rrf);
 		boss.executeForm(*rrf);
+		delete rrf;
 	}
 	catch (std::exception & e) 
 	{
@@ -36,6 +37,9 @@ int main(){
 	try
 	{
 		rrf = someRandomIntern.makeForm("robotomy request", "Target");
+		boss.signForm(*rrf);
+		boss.executeForm(*rrf);
+		delete rrf;
 	}
 	catch (std::exception & e) 
 	{
@@ -45,6 +49,9 @@ int main(){
 	try
 	{
 		rrf = someRandomIntern.makeForm("presidential pardon", "Target");
+		boss.signForm(*rrf);
+		boss.executeForm(*rrf);
+		delete rrf;
 	}
 	catch (std::exception & e) 
 	{
@@ -54,6 +61,7 @@ int main(){
 	try
 	{
 		rrf = someRandomIntern.makeForm("presidl pardon", "Target");
+		delete rrf;
 	}
 	catch (std::exception & e) 
 	{
