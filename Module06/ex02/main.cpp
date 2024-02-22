@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:12:19 by robin             #+#    #+#             */
-/*   Updated: 2024/02/17 17:11:04 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:16:44 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,17 @@ int main()
 	Base *base = generate();
 	identify(base);
 	identify(*base);
+
+	B bInstance;
+
+    try {
+        A& aInstance = dynamic_cast<A&>(bInstance);
+        std::cout << "Casting successful" << std::endl;
+		(void) aInstance;
+    } catch(std::exception& e) {
+        std::cout << "Casting failed: " << e.what() << std::endl;
+    }
+	
     delete base;
     return(0);
 }
