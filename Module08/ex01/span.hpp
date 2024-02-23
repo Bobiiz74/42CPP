@@ -6,25 +6,30 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 10:59:56 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:38:53 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <iostream>
 #include <vector>
 #include <list>
 #include <algorithm>
 
-class span{
-        private:
-                unsigned int N;
-
-        public:
-                span(void);
-                ~span();
+class Span {
+        private :
+                        unsigned int N;
+                        std::vector<int> v;
+	public :
+                        Span(void) {};
+                        Span(unsigned int size) : N(size) {};
+                        ~Span(void) {};
+                        void	addNumber(int nb);
+                        int		shortestSpan(void);
+                        int		longestSpan(void);
+                        Span &operator=(const Span &rhs);
 };
 
 
