@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 10:52:21 by rgodtsch         ###   ########.fr       */
+/*   Created: 2024/02/23 10:57:39 by rgodtsch          #+#    #+#             */
+/*   Updated: 2024/02/23 10:57:57 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#include "span.hpp"
 
-#include <iostream>
-#include <vector>
-#include <list>
-#include <algorithm>
+
+
+
+
+
+
+
+
+
+
+
+
 
 template <typename T>
 int easyfind(T& type, int toFound){
@@ -26,6 +33,3 @@ int easyfind(T& type, int toFound){
     else
         return (std::cout << "Occurence " << *it << " founded !" << std::endl, *it);
 }
-
-
-#endif

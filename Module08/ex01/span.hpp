@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 10:52:21 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:59:56 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 #include <list>
 #include <algorithm>
 
-template <typename T>
-int easyfind(T& type, int toFound){
-    typename T::const_iterator it = std::find(type.begin(), type.end(), toFound);
-    if(it == type.end())
-        return(std::cout << "No occurence founded for " << toFound << std::endl, *it);
-    else
-        return (std::cout << "Occurence " << *it << " founded !" << std::endl, *it);
-}
+class span{
+        private:
+                unsigned int N;
+
+        public:
+                span(void);
+                ~span();
+};
 
 
 #endif
