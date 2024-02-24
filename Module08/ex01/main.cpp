@@ -3,34 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:02 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 17:37:34 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:06:36 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+#define NB_ELEM 5
+
 int main()
 {
-    try
-    {
-        Span sp = Span(4);
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
-        std::cout << sp.longestSpan() << std::endl;
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+
+
+{
+    try {
+    Span spanInstance(NB_ELEM); 
+
+    std::vector<int> numbersToAdd;
+    srand(time(nullptr));
+    for (int i = 0; i < NB_ELEM; ++i) {
+        numbersToAdd.push_back(rand() % 20000 + 1);
     }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
+        spanInstance.addNumber(numbersToAdd);
+        for (size_t i = 0; i < numbersToAdd.size(); ++i) {
+        std::cout << i+1 << " : " << numbersToAdd[i] << std::endl;
     }
-    
-    
-    // std::cout << sp.shortestSpan() << std::endl;
-    
+        std::cout << spanInstance.shortestSpan() << std::endl;
+        std::cout << spanInstance.longestSpan() << std::endl;
+    } 
+    catch (const std::out_of_range& e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
     return 0;
 }

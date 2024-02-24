@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 17:38:53 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/24 14:43:27 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <vector>
 #include <list>
 #include <algorithm>
+#include <string>
+
 
 class Span {
         private :
@@ -26,9 +28,11 @@ class Span {
                         Span(void) {};
                         Span(unsigned int size) : N(size) {};
                         ~Span(void) {};
+                        Span(const Span& src) : N(src.N), v(src.v) {};
                         void	addNumber(int nb);
-                        int		shortestSpan(void);
+                        void	addNumber(std::vector<int> &t_vec);
                         int		longestSpan(void);
+                        int		shortestSpan(void);
                         Span &operator=(const Span &rhs);
 };
 
