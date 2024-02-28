@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:25:00 by robin             #+#    #+#             */
-/*   Updated: 2024/02/28 15:35:21 by robin            ###   ########.fr       */
+/*   Updated: 2024/02/28 16:21:00 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bitcoin::Bitcoin(const std::string &path)
 {
         std::fstream file(path.c_str());
         if (!file.is_open()) {
-            std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
+            std::cerr << "Error: Opening file goes wrong" << std::endl;
             return;
         }
         else if(file.is_open()){
@@ -29,7 +29,7 @@ Bitcoin::Bitcoin(const std::string &path)
                 float value;
                 separator = line.find(",");
                 if (separator == std::string::npos){
-                    std::cerr << "Format de ligne invalide ";
+                    std::cerr << "Error: Wrong format ";
                     std::cerr << line << std::endl;
                     continue ;
                 }
@@ -37,7 +37,7 @@ Bitcoin::Bitcoin(const std::string &path)
                 valueStr = line.substr(separator + 1);
                 separator = valueStr.find(",");
                 if (separator != std::string::npos){
-                    std::cerr << "Format de ligne invalide ";
+                    std::cerr << "Error: Wrong format ";
                     std::cerr << line << std::endl;
                     continue ;
                 }
