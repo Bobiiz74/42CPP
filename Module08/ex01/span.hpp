@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/24 14:43:27 by robin            ###   ########.fr       */
+/*   Updated: 2024/03/01 11:19:57 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <string>
 
 
+template <typename T>
 class Span {
         private :
                         unsigned int N;
