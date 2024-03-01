@@ -6,7 +6,7 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:57:39 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/23 17:39:07 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:57:47 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ void	Span::addNumber(int nb){
         v.push_back(nb);
 }
 
-// template <typename T>
-// int		Span::shortestSpan(void){
-//     typename T::const_iterator it = this->v.begin();
-//     typename T::const_iterator it2 = this->v.begin();
-//     int num1 = v[it];
-//     int num2 = v[it];
-//     unsigned int diff = num1 - num2;
-//     for(; it && it2 < this->v.end(); it++ && it2++){
-//         if(static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2) <= diff)
-//             diff = static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2);
-//         typename T::const_iterator it2 = this->v.begin();
-//     }
-//     return(diff);
-// }
+template <typename T>
+int		Span::shortestSpan(void){
+    typename T::const_iterator it = this->v.begin();
+    typename T::const_iterator it2 = this->v.begin();
+    int num1 = v[it];
+    int num2 = v[it];
+    unsigned int diff = num1 - num2;
+    for(; it && it2 < this->v.end(); it++ && it2++){
+        if(static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2) <= diff)
+            diff = static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2);
+        typename T::const_iterator it2 = this->v.begin();
+    }
+    return(diff);
+}
 
 template <typename T>
 int		Span::longestSpan(void){

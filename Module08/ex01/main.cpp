@@ -6,7 +6,7 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:02 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 17:37:34 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:59:55 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Span sp = Span(4);
+        Span<int> sp = Span(4);
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);

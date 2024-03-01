@@ -6,7 +6,7 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 17:38:53 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:59:42 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <list>
 #include <algorithm>
 
+template <typename T>
 class Span {
         private :
                         unsigned int N;
