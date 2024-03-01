@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:57:39 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/24 12:14:02 by robin            ###   ########.fr       */
+/*   Updated: 2024/03/01 14:44:01 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		Span::longestSpan(void)
 	}
 	return (max - min);
 }
+
 
 Span &Span::operator=(const Span & rhs)
 {
