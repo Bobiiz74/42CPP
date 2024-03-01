@@ -6,48 +6,78 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:57:39 by rgodtsch          #+#    #+#             */
-/*   Updated: 2024/02/23 17:57:47 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:19:14 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+template <typename T>
+int easyfind(T& type, int toFound){
+    typename T::const_iterator it = std::find(type.begin(), type.end(), toFound);
+    if(it == type.end())
+        return(1);
+    else
+        return (0);
+}
 
 void	Span::addNumber(int nb){
     if(v.size() >= N)
         throw std::range_error("No space left in the container");
-    else
+    else{
+        if(easyfind(v, nb) == 0)
+            throw std::invalid_argument("Do not add twice the same number");
         v.push_back(nb);
+    }
 }
 
-template <typename T>
-int		Span::shortestSpan(void){
-    typename T::const_iterator it = this->v.begin();
-    typename T::const_iterator it2 = this->v.begin();
-    int num1 = v[it];
-    int num2 = v[it];
-    unsigned int diff = num1 - num2;
-    for(; it && it2 < this->v.end(); it++ && it2++){
-        if(static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2) <= diff)
-            diff = static_cast<unsigned int>(num1) - static_cast<unsigned int>(num2);
-        typename T::const_iterator it2 = this->v.begin();
-    }
-    return(diff);
+void	Span::addNumber(std::vector<int> &t_vec)
+{
+	if (t_vec.size() > (this->N - v.size()))
+		throw std::out_of_range("Too much elements");
+	std::vector<int>::const_iterator it = t_vec.begin();
+	std::vector<int>::const_iterator it2 = t_vec.end();
+	v.insert(v.end(), it, it2);
 }
 
-template <typename T>
-int		Span::longestSpan(void){
-    
-    typename T::const_iterator it = this->v.begin();
-    int shortest = v[it];
-    int biggest = v[it];
-    for(; it < this->v.end(); it++){
-        if (v[it] >= shortest)
-            shortest = v[it];
-        else if (v[it] <= biggest)
-            biggest = v[it];
-    }
-    return (biggest-shortest);
+int		Span::shortestSpan(void)
+{
+	if (this->v.size() == 1)
+		throw std::length_error("Vector size is too small");
+	else if (this->v.empty() == true)
+		throw std::length_error("Vector is empty");
+	int min = this->longestSpan();
+	int shortest;
+	std::vector<int> tmp = v;
+	std::sort(tmp.begin(), tmp.end());
+	for (std::vector<int>::const_iterator it = tmp.begin(); it != tmp.end(); ++it)
+	{
+		for (std::vector<int>::const_iterator it2 = it; it2 != tmp.end(); ++it2)
+		{
+			if (*it == *it2)
+				continue ;
+			shortest = *it2 - *it;
+			if (shortest < min)
+				min = shortest;
+		}
+	}
+	return min;
+}
+
+int		Span::longestSpan(void)
+{
+	int max;
+	int min;
+	if (this->v.size() == 1)
+		throw std::length_error("vector size is too small");
+	else if (this->v.empty() == true)
+		throw std::length_error("vector is empty");
+	else
+	{
+		max = *std::max_element(v.begin(), v.end());
+		min = *std::min_element(v.begin(), v.end());
+	}
+	return (max - min);
 }
 
 Span &Span::operator=(const Span & rhs)
@@ -59,3 +89,4 @@ Span &Span::operator=(const Span & rhs)
 	}
 	return *this;
 }
+

@@ -6,7 +6,7 @@
 /*   By: rgodtsch <rgodtsch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:54:42 by robin             #+#    #+#             */
-/*   Updated: 2024/02/23 17:59:42 by rgodtsch         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:19:57 by rgodtsch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <vector>
 #include <list>
 #include <algorithm>
+#include <string>
+
 
 template <typename T>
 class Span {
@@ -27,9 +29,11 @@ class Span {
                         Span(void) {};
                         Span(unsigned int size) : N(size) {};
                         ~Span(void) {};
+                        Span(const Span& src) : N(src.N), v(src.v) {};
                         void	addNumber(int nb);
-                        int		shortestSpan(void);
+                        void	addNumber(std::vector<int> &t_vec);
                         int		longestSpan(void);
+                        int		shortestSpan(void);
                         Span &operator=(const Span &rhs);
 };
 
