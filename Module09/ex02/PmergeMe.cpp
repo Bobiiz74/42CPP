@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:10:09 by robin             #+#    #+#             */
-/*   Updated: 2024/03/15 16:20:44 by robin            ###   ########.fr       */
+/*   Updated: 2024/03/20 14:54:24 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PmergeMe::PmergeMe(int argc, char *argv[]) {
 
     try {
         for (int i = 1; i < argc; ++i) {
-            int num = std::stoi(argv[i]);
+            int num = std::atoi(argv[i]);
             deque_sequence.push_back(num);
             vector_sequence.push_back(num);
         }
@@ -45,31 +45,10 @@ void PmergeMe::printSequencesAfter() const {
 }
 
 void PmergeMe::mergeInsertSortDeque() {
-    std::deque<int> tempDeque;
-    while (!deque_sequence.empty()) {
-        int current = deque_sequence.front();
-        deque_sequence.pop_front();
-
-        while (!tempDeque.empty() && tempDeque.back() > current) {
-            deque_sequence.push_front(tempDeque.back());
-            tempDeque.pop_back();
-        }
-        tempDeque.push_back(current);
-    }
-
-    while (!tempDeque.empty()) {
-        deque_sequence.push_front(tempDeque.back());
-        tempDeque.pop_back();
-    }
+    
 }
-
 void PmergeMe::mergeInsertSortVector() {
-    std::vector<int> tempVector;
-    for (std::vector<int>::iterator it = vector_sequence.begin(); it != vector_sequence.end(); ++it) {
-        std::vector<int>::iterator insertPos = std::upper_bound(tempVector.begin(), tempVector.end(), *it);
-        tempVector.insert(insertPos, *it);
-    }
-    vector_sequence = tempVector;
+    
 }
 
 void PmergeMe::sortSequencesAndPrintTime() {
