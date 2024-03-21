@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:10:28 by robin             #+#    #+#             */
-/*   Updated: 2024/03/15 16:16:27 by robin            ###   ########.fr       */
+/*   Updated: 2024/03/20 16:05:27 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <iostream>
 #include <deque>
 #include <vector>
-#include <chrono>
+#include <ctime>
 
 class PmergeMe
 {
     private:
-        std::deque<int> deque_sequence;
-        std::vector<int> vector_sequence;
+        std::deque<unsigned int> deque_sequence;
+        std::vector<unsigned int> vector_sequence;
 
         void mergeInsertSortDeque();
         void mergeInsertSortVector();
