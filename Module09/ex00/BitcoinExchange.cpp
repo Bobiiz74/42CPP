@@ -6,7 +6,7 @@
 /*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:25:00 by robin             #+#    #+#             */
-/*   Updated: 2024/02/28 16:21:00 by robin            ###   ########.fr       */
+/*   Updated: 2024/03/21 17:26:48 by robin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,16 @@ bool Bitcoin::isValidDate(const std::string &date) {
         // Vérifier le nombre de jours pour les mois ayant 30 jours
         if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
             return false;
+			
+		// limites du csv
+		if (year < 2009 || year > 2022) {
+		std::cerr << "Error: No data registered" << std::endl;
+		return false;
+		}
+		if (year >= 2022 && month >= 3) {
+		std::cerr << "Error: Data limit found" << std::endl;
+		return false;
+		}
 
         return true;
     }
@@ -165,22 +175,21 @@ void Bitcoin::checkInput(const std::string &input){
 }
 
 void Bitcoin::printMoney(const std::string &date, float value){
-    //lower_bound retourne un iterateur pointant vers 1er elem de data 
-    //sans depasser date.
     std::map<std::string, float>::iterator it = data.lower_bound(date);
-	float finalValue;
+    float finalValue;
 
-	if (it != data.end()) {
-		if (it->first != date)
-			--it;
-		finalValue = (it->second);
-	}
-	else if (!data.empty()) {
-		finalValue = ((--it)->second);
-	}
-	else {
-		std::cerr << "Error: No changes rate found for => " << date << std::endl;
-		return ;
-	}
-	std::cout << date << " => " << value << " = " << value * finalValue << std::endl;
+    if (it != data.end()) {
+        if (it->first != date)
+            --it;
+        finalValue = it->second;
+    }
+    else if (!data.empty()) {
+        --it;
+        finalValue = it->second;
+    }
+    else {
+        std::cerr << "Error: No changes rate found for => " << date << std::endl;
+        return ;
+    }
+    std::cout << date << " => " << value << " = " << value * finalValue << std::endl;
 }
